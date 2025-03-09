@@ -28,9 +28,13 @@
     "nuxt": "latest"
   },
   "devDependencies": {
+    "@element-plus/nuxt": "^1.1.1",
     "@nuxtjs/tailwindcss": "latest",
     "autoprefixer": "latest",
+    "element-plus": "^2.9.6",
     "postcss": "latest",
-    "tailwindcss": "latest"
+    "sass": "^1.85.1",
+    "tailwindcss": "latest",
+    "unplugin-element-plus": "^0.9.1"
   }
 }

@@ -4,8 +4,11 @@ import { defineNuxtConfig } from 'nuxt/config'
 export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
-    '@pinia/nuxt'
+    '@pinia/nuxt',
+    '@element-plus/nuxt'
   ],
+
+  css: ['~/assets/css/main.scss'],
 
   devtools: { 
     enabled: process.env.NUXT_PUBLIC_ENABLE_DEVTOOLS === 'true'
@@ -30,8 +33,24 @@ export default defineNuxtConfig({
     pageTransition: { name: 'page', mode: 'out-in' }
   },
 
+  elementPlus: {
+    importStyle: false,
+    themes: ['dark']
+  },
+
   // 开发环境代理配置
   vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: `
+            @use "sass:math";
+            @use "sass:map";
+            @use "@/assets/styles/element/index.scss" as *;
+          `
+        }
+      }
+    },
     server: {
       proxy: {
         '/api': {
