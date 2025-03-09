@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "nuxt build",
     "dev": "nuxt dev",
+    "dev:staging": "nuxt dev --dotenv .env.staging",
+    "dev:prod": "nuxt dev --dotenv .env.production",
+    "dev:test": "nuxt dev --dotenv .env.test",
+    "build": "nuxt build",
+    "build:staging": "nuxt build --dotenv .env.staging",
+    "build:prod": "nuxt build --dotenv .env.production",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
@@ -14,11 +19,18 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@pinia/nuxt": "^0.10.1",
-    "axios": "^1.8.2",
+    "@pinia/nuxt": "latest",
+    "@types/crypto-js": "latest",
+    "@types/nprogress": "^0.2.3",
+    "axios": "latest",
+    "crypto-js": "latest",
+    "nprogress": "^0.2.0",
     "nuxt": "latest"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^6.13.1"
+    "@nuxtjs/tailwindcss": "latest",
+    "autoprefixer": "latest",
+    "postcss": "latest",
+    "tailwindcss": "latest"
   }
 }
