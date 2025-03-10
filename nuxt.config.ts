@@ -62,5 +62,8 @@ export default defineNuxtConfig({
     }
   },
 
-  compatibilityDate: '2025-03-09'
+  compatibilityDate: '2025-03-09',
+
+  // 根据环境变量设置 SSR 模式
+  ssr: process.env.NUXT_SSR === 'true',
 })
